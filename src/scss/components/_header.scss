@@ -1,0 +1,124 @@
+@import "../base/variables";
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $bg-primary-color;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    background-color: #c4c4c4;
+    width: 160px;
+    height: 40px;
+}
+
+.nav {
+    position: relative;
+    background-color: $bg-primary-color;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+
+    &__list {
+        display: flex;
+        gap: 45px;
+        z-index: 8;
+        flex-direction: column;
+        position: absolute;
+        right: -320px;
+        top: -45px;
+        min-width: 300px;
+        background-color: $bg-primary-color;
+        justify-content: center;
+        align-items: center;
+        padding-top: 65px;
+        padding-bottom: 45px;
+        transition: right 0.5s ease;
+
+        @media (min-width: $screen-md) {
+            position: static;
+            flex-direction: row;
+            padding: 0;
+            min-width: auto;
+            background-color: transparent;
+        }
+    }
+
+    &__list.open {
+        right: -15px;
+    }
+
+    &__link {
+        line-height: $line-height-2;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #0c122d;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        background-color: transparent;
+        flex-direction: row;
+    }
+}
+
+.burger {
+    position: relative;
+    z-index: 15;
+    display: block;
+    margin-left: auto;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+
+    @media (min-width: $screen-md) {
+        display: none;
+    }
+
+    &::before,
+    &::after,
+    div {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: $title-color;
+        transition: 0.3s ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    div {
+        top: 10px;
+    }
+
+    &::after {
+        bottom: 0px;
+    }
+}
+
+.burger.open {
+    &::before {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    div {
+        opacity: 0;
+    }
+
+    &::after {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+}

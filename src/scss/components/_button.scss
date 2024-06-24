@@ -1,0 +1,36 @@
+@import "../base/variables";
+
+.button {
+    padding: 0.5em 1.5em;
+    border-radius: $radius-sm;
+    text-align: center;
+    line-height: $line-height-2;
+    text-decoration: none;
+}
+
+.button_primary {
+    background-color: $primary-btn-color;
+    color: white;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $primary-hover-color;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($primary-btn-color, 0.3);
+    }
+}
+
+.button_secondary {
+    border: 1px solid $accent-color;
+    color: $accent-color;
+}
+
+.header_btn {
+    display: none;
+    @media (min-width: $screen-md) {
+        display: block;
+    }
+}

@@ -1,0 +1,109 @@
+//Base
+@import "base/variables";
+@import "base/mixins";
+@import "base/reset";
+@import "base/fonts";
+
+//Components
+@import "components/header";
+@import "components/button";
+
+body {
+    font-family: "Open Sans", Fallback, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $primary-text-color;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 0 15px;
+}
+
+.bg_image {
+    position: absolute;
+    top: 0;
+    left: 51.7%;
+    opacity: 15%;
+    border-bottom-left-radius: 150px;
+}
+
+.hero {
+    background-color: $bg-primary-color;
+    padding-top: 60px;
+    &__content {
+        display: flex;
+        gap: 88px;
+        align-items: center;
+    }
+    &__left {
+        width: 50%;
+    }
+    &__right {
+        width: 50%;
+    }
+    &__model {
+        font-family: "Rubik";
+        color: $accent-color;
+        display: block;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+    &__image {
+        margin-left: auto;
+        position: relative;
+        z-index: 5;
+        border-radius: 16px 16px 16px 0px;
+    }
+    &__heading {
+        font-family: Rubik;
+        font-size: 72px;
+        font-weight: 700;
+        text-align: left;
+        color: $title-color;
+        margin-bottom: 40px;
+    }
+    &__paragraph {
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: $line-height-1;
+        margin-bottom: 50px;
+    }
+    &__buttons {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.advantages {
+    padding-top: 72px;
+    padding-bottom: 60px;
+    background-color: $bg-primary-color;
+    &__list {
+        display: flex;
+        gap: 31px;
+    }
+    &__item {
+        display: flex;
+    }
+    &__icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.7em;
+    }
+    &__title {
+        margin-bottom: 1em;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        max-width: 205px;
+        color: $title-color;
+    }
+    &__paragraph {
+        line-height: 22px;
+    }
+}
